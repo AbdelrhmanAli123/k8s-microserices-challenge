@@ -22,8 +22,12 @@ spec:
     spec:
       containers:
       - name: second-app
-        image: second
+        image: abdelrhmandevops/second-app
         ports:
         - containerPort: 8888
+        env:
+        - name: API_URL
+          value: first-service/json
+            
         
       restartPolicy: Always

@@ -22,8 +22,9 @@ spec:
     spec:
       containers:
       - name: first-app
-        image: first
-        ports:
-        - containerPort: 8080
-        
+        image: abdelrhmandevops/first-app
+        env:
+        - name: PORT
+          value: "80"
+            
       restartPolicy: Always

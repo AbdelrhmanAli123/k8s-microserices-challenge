@@ -7,7 +7,7 @@ const app = express();
 console.log(process.env.API_URL)
 const fetchData = async (req, res) => {
   try {
-    const API_URL = process.env.API_URL ;
+    const API_URL = process.env.API_URL || "localhost:8081/json" ;
     const jsonData = await superagent.get(API_URL);
     res.status(200).json({
       status: "successful",

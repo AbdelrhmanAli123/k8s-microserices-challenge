@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  second-app
+  namespace: default
+  labels:
+    app:  my-app
+spec:
+  selector:
+    matchLabels:
+      app: second-app
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app:  second-app
+    spec:
+      containers:
+      - name: second-app
+        image: second
+        ports:
+        - containerPort: 8888
+        
+      restartPolicy: Always

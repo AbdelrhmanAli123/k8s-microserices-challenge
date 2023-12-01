@@ -9,7 +9,7 @@
 - expose these deployments using service
 
 ## notes
-- the first app works on port 8081, you can use any port instaed
+- the first app works on port 8080, you can use any port instaed
 - the second app works on port 8888, you can use any port instaed
 - the first app exposes the JSON on the route "/json"
 - the second app fetchs the exposed JSON via the route "/fetch"
